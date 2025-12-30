@@ -11,6 +11,11 @@ namespace Gestionnaire_de_contacts
             string choix = "0";
             List<Contact> liste_contact = new();
             string chemin = Path.Combine(Environment.CurrentDirectory, "contacts.txt");
+            if (!File.Exists(chemin))
+            {
+
+                File.WriteAllText(chemin, string.Empty);
+            }
             string contenu = File.ReadAllText(chemin);
             while (choix != "4")
             {
